@@ -99,6 +99,9 @@ if [ ! -z "${OVERWRITE_FROM}" ]; then
   echo "Setting configuration option OVERWRITE_FROM with value: ${OVERWRITE_FROM}"
 fi
 
+# custom message size until PR #76 or similar gets merged in
+add_config_value "message_size_limit" "25600000"
+
 #Start services
 
 # If host mounting /var/spool/postfix, we need to delete old pid file before
